@@ -7,9 +7,9 @@ use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/', function ($request, $response, $args) use ($container) {
-        $renderer = $container->get('renderer');
-        return $renderer->render($response, "index.php", $args);
-    });
-
+    $app->get('/', 'HomePageController');
+    $app->post('/', 'AddTaskController');
+    $app->post('/mark', 'MarkTaskCompletedController');
+    $app->get('/completed', 'CompletedPageController');
+    $app->get('/delete/{id}', 'DeleteTaskController');
 };

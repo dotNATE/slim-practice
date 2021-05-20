@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Classes\Task;
 use DI\ContainerBuilder;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -32,6 +33,19 @@ return function (ContainerBuilder $containerBuilder) {
         $renderer = new PhpRenderer($settings['template_path']);
         return $renderer;
     };
+
+    $container['db'] = function () {
+        $db = new PDO('mysql:host=127.0.0.1;dbname=todo_list_app', 'root', 'password');
+        $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_CLASS);
+        return $db;
+    };
+
+    $container['TasksModel'] = DI\factory('\App\Factories\TasksModelFactory');
+    $container['HomePageController'] = DI\factory('\App\Factories\HomePageControllerFactory');
+    $container['CompletedPageController'] = DI\factory('\App\Factories\CompletedPageControllerFactory');
+    $container['AddTaskController'] = DI\factory('\App\Factories\AddTaskControllerFactory');
+    $container['MarkTaskCompletedController'] = DI\factory('\App\Factories\MarkTaskCompletedControllerFactory');
+    $container['DeleteTaskController'] = DI\factory('\App\Factories\DeleteTaskControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };
