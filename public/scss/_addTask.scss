@@ -4,14 +4,8 @@
   @include contentBox(1rem auto);
 }
 
-#newTaskInput {
-  width: 100%;
-  background: transparent;
-  border: none;
-  padding: 1rem;
-  &::placeholder {
-    color: $textColor;
-  }
+#newTaskInput, #newTaskContent {
+  @include formEntryBox;
 }
 
 #submitNewTaskButton {
@@ -19,4 +13,5 @@
   border: none;
   color: $textColor;
   padding: 1rem;
+  cursor: pointer;
 }

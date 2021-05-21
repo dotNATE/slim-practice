@@ -51,4 +51,10 @@ class TasksModel
         $query = $this->db->prepare("UPDATE `tasks` SET `isDeleted` = :deleted WHERE `id` = :id;");
         $query->execute(['id' => $id, 'deleted' => '1']);
     }
+
+    public function editTask($id, $newContent): void
+    {
+        $query = $this->db->prepare("UPDATE `tasks` SET `taskContent` = :newContent WHERE `id` = :id;");
+        $query->execute(['newContent' => $newContent, 'id' => $id]);
+    }
 }

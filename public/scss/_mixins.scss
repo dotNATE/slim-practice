@@ -1,7 +1,20 @@
 @mixin contentBox($margin: 0 auto) {
   width: 90%;
+  max-width: 40rem;
   height: 3rem;
   background: $taskColor;
   border-radius: 7px;
   margin: $margin;
+}
+
+@mixin formEntryBox {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  color: $textColor;
+  &::placeholder {
+    color: $textColor;
+    opacity: .6;
+  }
 }

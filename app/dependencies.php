@@ -46,6 +46,8 @@ return function (ContainerBuilder $containerBuilder) {
     $container['AddTaskController'] = DI\factory('\App\Factories\AddTaskControllerFactory');
     $container['MarkTaskCompletedController'] = DI\factory('\App\Factories\MarkTaskCompletedControllerFactory');
     $container['DeleteTaskController'] = DI\factory('\App\Factories\DeleteTaskControllerFactory');
+    $container['EditTaskController'] = DI\factory('\App\Factories\EditTaskControllerFactory');
+    $container['SubmitEditTaskController'] = DI\factory('\App\Factories\SubmitEditTaskControllerFactory');
 
     $containerBuilder->addDefinitions($container);
 };

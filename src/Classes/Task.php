@@ -11,25 +11,35 @@ class Task
     protected $isCompleted;
     protected $isDeleted;
 
+    /**
+     * @return string
+     */
     public function getId(): string
     {
         return $this->id;
     }
 
+    /**
+     * @return string
+     */
     public function getTaskContent(): string
     {
         return $this->taskContent;
     }
 
+    /**
+     * @return bool
+     */
     public function getIsCompleted(): bool
     {
-        if ($this->isCompleted) return true;
-        return false;
+        return $this->isCompleted;
     }
 
+    /**
+     * @return bool
+     */
     public function getIsDeleted(): bool
     {
-        if ($this->isDeleted) return true;
-        return false;
+        return $this->isDeleted;
     }
 }
