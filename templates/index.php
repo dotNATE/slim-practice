@@ -4,7 +4,7 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Blaster</title>
-    <link rel="stylesheet" href="<?php echo $_SERVER['DOCUMENT_ROOT'] . "/css/style.css"?>">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
         <a href="/">Uncompleted</a>
         <a href="/completed">Completed</a>
     </nav>
-    <form action="/" method="post">
+    <form action="/" method="post" id="newTaskInputForm">
         <input type="text" name="newTaskInput" id="newTaskInput" placeholder="Create a new task...">
         <input type="submit">
     </form>
@@ -23,10 +23,10 @@
 
         foreach ($tasks as $task) {
             echo "<li class='taskItem'>
-                        <form action='/mark' method='post'>
-                            <button name='markComplete' value=" . $task->getId() . ">Complete</button>
+                        <form action='/mark' method='post' class='markCompleteContainer'>
+                            <button name='markComplete' value=" . $task->getId() . " class='markCompleteButton'></button>
                         </form>
-                        <p>" . $task->getTaskContent() . "</p>
+                        <p class='taskContent'>" . $task->getTaskContent() . "</p>
                         <div><a href='/delete/" . $task->getId() . "'>X</a></div>
                       </li>";
         }

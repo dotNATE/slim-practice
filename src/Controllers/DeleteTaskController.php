@@ -20,6 +20,7 @@ class DeleteTaskController
     public function __invoke(Request $request, Response $response, $args): Response
     {
         $this->model->deleteTask($args['id']);
-        return $response->withHeader('Location', '/');
+        $currentLocation = $request->getHeader('HTTP_REFERER');
+        return $response->withHeader('Location', $currentLocation);
     }
 }

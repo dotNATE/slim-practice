@@ -21,6 +21,7 @@ class MarkTaskCompletedController
     {
         $data = $request->getParsedBody();
         $this->model->markTaskCompleted($data['markComplete']);
-        return $response->withHeader('Location', '/');
+        $currentLocation = $request->getHeader('HTTP_REFERER');
+        return $response->withHeader('Location', $currentLocation);
     }
 }
