@@ -1,0 +1,26 @@
+h1 {
+  text-align: center;
+  height: 8rem;
+  padding: 12% 0;
+  font-size: 2rem;
+  color: $textColor;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  @include contentBox();
+  & a.activeLink {
+    color: $activeLinkColor;
+    &:hover {
+      color: $activeLinkColor;
+    }
+  }
+  & a {
+    color: $linkColor;
+    &:hover {
+      color: $textColor;
+    }
+  }
+}

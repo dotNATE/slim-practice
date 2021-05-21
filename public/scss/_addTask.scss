@@ -1,0 +1,22 @@
+#newTaskInputForm {
+  display: flex;
+  justify-content: center;
+  @include contentBox(1rem auto);
+}
+
+#newTaskInput {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 1rem;
+  &::placeholder {
+    color: $textColor;
+  }
+}
+
+#submitNewTaskButton {
+  background: transparent;
+  border: none;
+  color: $textColor;
+  padding: 1rem;
+}

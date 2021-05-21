@@ -1,0 +1,7 @@
+@mixin contentBox($margin: 0 auto) {
+  width: 90%;
+  height: 3rem;
+  background: $taskColor;
+  border-radius: 7px;
+  margin: $margin;
+}

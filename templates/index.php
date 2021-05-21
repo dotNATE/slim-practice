@@ -11,12 +11,12 @@
         <h1>task blaster</h1>
     </header>
     <nav>
-        <a href="/">Uncompleted</a>
-        <a href="/completed">Completed</a>
+        <a href="/" <?php if (!$tasks[0]->getIsCompleted()) echo "class='activeLink'" ?> >Uncompleted</a>
+        <a href="/completed" <?php if ($tasks[0]->getIsCompleted()) echo "class='activeLink'" ?> >Completed</a>
     </nav>
     <form action="/" method="post" id="newTaskInputForm">
         <input type="text" name="newTaskInput" id="newTaskInput" placeholder="Create a new task...">
-        <input type="submit">
+        <input type="submit" id="submitNewTaskButton" value="&#8594">
     </form>
     <ul id="taskContainer">
         <?php
@@ -27,7 +27,7 @@
                             <button name='markComplete' value=" . $task->getId() . " class='markCompleteButton'></button>
                         </form>
                         <p class='taskContent'>" . $task->getTaskContent() . "</p>
-                        <div><a href='/delete/" . $task->getId() . "'>X</a></div>
+                        <div><a href='/delete/" . $task->getId() . "'>&#10060;</a></div>
                       </li>";
         }
 

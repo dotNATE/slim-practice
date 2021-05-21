@@ -1,0 +1,45 @@
+#taskContainer {
+  display: grid;
+  padding: 1rem 0;
+  grid-row-gap: .2rem;
+}
+
+.taskItem {
+  display: grid;
+  grid-template-columns: 3rem 1fr 3rem;
+  @include contentBox();
+}
+
+.markCompleteContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.markCompleteButton {
+  border-radius: 7px;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 1px solid $textColor;
+  background: transparent no-repeat center;
+  background-size: 63%;
+  cursor: pointer;
+  &:hover {
+  background-image: url(../images/icon-check.svg);
+  }
+}
+
+.taskContent {
+  max-height: 1.5rem;
+  max-width: 4rem;
+  line-height: 1.5rem;
+  white-space: nowrap;
+  color: $textColor;
+  margin: .75rem 0;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
