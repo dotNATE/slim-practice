@@ -22,14 +22,15 @@
         <?php
 
         foreach ($tasks as $task) {
-            echo "<li class='taskItem'>
-                        <form action='/mark' method='post' class='markCompleteContainer'>
-                            <button name='markComplete' value=" . $task->getId() . " class='markCompleteButton'></button>
-                        </form>
-                        <p class='taskContent'>" . $task->getTaskContent() . "</p>
-                        <div><a href='/edit/" . $task->getId() . "'>&#128295;</a></div>
-                        <div><a href='/delete/" . $task->getId() . "'>&#10060;</a></div>
-                      </li>";
+            echo
+            "<li class='taskItem'>
+                    <form action='/mark' method='post' class='markCompleteContainer'>
+                        <button name='markComplete' value=" . $task->getId() . " class='markCompleteButton'></button>
+                    </form>
+                    <p class='taskContent'>" . $task->getTaskContent() . "</p>
+                    <div><a href='/edit/" . $task->getId() . "'>&#128295;</a></div>
+                    <div><a href='/delete/" . $task->getId() . "'>&#10060;</a></div>
+            </li>";
         }
 
         ?>

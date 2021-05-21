@@ -25,9 +25,4 @@ class CompletedPageController
 
         return $this->view->render($response, "index.php", ['tasks' => $tasks]);
     }
-
-    public function deleteTask($id): void
-    {
-        $this->model->deleteTask($id);
-    }
 }
